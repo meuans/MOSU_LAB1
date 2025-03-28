@@ -29,14 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.modelTimer = new System.Windows.Forms.Timer(this.components);
             this.bt_start = new System.Windows.Forms.Button();
             this.bt_stop = new System.Windows.Forms.Button();
             this.model_chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnSpeed = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUp2 = new System.Windows.Forms.Button();
+            this.btnDn2 = new System.Windows.Forms.Button();
+            this.tbx2 = new System.Windows.Forms.TextBox();
+            this.tbx3 = new System.Windows.Forms.TextBox();
+            this.btnDn3 = new System.Windows.Forms.Button();
+            this.btnUp3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.model_chart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // modelTimer
@@ -47,7 +56,7 @@
             // bt_start
             // 
             this.bt_start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.bt_start.Location = new System.Drawing.Point(24, 608);
+            this.bt_start.Location = new System.Drawing.Point(24, 696);
             this.bt_start.Name = "bt_start";
             this.bt_start.Size = new System.Drawing.Size(79, 32);
             this.bt_start.TabIndex = 0;
@@ -58,7 +67,7 @@
             // bt_stop
             // 
             this.bt_stop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_stop.Location = new System.Drawing.Point(822, 608);
+            this.bt_stop.Location = new System.Drawing.Point(911, 696);
             this.bt_stop.Name = "bt_stop";
             this.bt_stop.Size = new System.Drawing.Size(79, 32);
             this.bt_stop.TabIndex = 1;
@@ -71,34 +80,123 @@
             this.model_chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.model_chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.model_chart.Legends.Add(legend1);
-            this.model_chart.Location = new System.Drawing.Point(12, 286);
+            chartArea3.Name = "ChartArea1";
+            this.model_chart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.model_chart.Legends.Add(legend3);
+            this.model_chart.Location = new System.Drawing.Point(12, 413);
             this.model_chart.Name = "model_chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Temp";
-            this.model_chart.Series.Add(series1);
-            this.model_chart.Size = new System.Drawing.Size(884, 300);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Legend = "Legend1";
+            series3.Name = "Temp";
+            this.model_chart.Series.Add(series3);
+            this.model_chart.Size = new System.Drawing.Size(978, 277);
             this.model_chart.TabIndex = 2;
             this.model_chart.Text = "chart1";
             this.model_chart.Click += new System.EventHandler(this.model_chart_Click);
+            // 
+            // btnSpeed
+            // 
+            this.btnSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSpeed.Location = new System.Drawing.Point(120, 696);
+            this.btnSpeed.Name = "btnSpeed";
+            this.btnSpeed.Size = new System.Drawing.Size(55, 32);
+            this.btnSpeed.TabIndex = 3;
+            this.btnSpeed.Text = "x10";
+            this.btnSpeed.UseVisualStyleBackColor = true;
+            this.btnSpeed.Click += new System.EventHandler(this.btnSpeed_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MOSU_LAB1.Properties.Resources.Знімок_екрана_2025_03_28_140547;
+            this.pictureBox1.Location = new System.Drawing.Point(217, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(373, 268);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnUp2
+            // 
+            this.btnUp2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUp2.Location = new System.Drawing.Point(170, 176);
+            this.btnUp2.Name = "btnUp2";
+            this.btnUp2.Size = new System.Drawing.Size(44, 32);
+            this.btnUp2.TabIndex = 5;
+            this.btnUp2.Text = ">";
+            this.btnUp2.UseVisualStyleBackColor = true;
+            this.btnUp2.Click += new System.EventHandler(this.btnUp2_Click);
+            // 
+            // btnDn2
+            // 
+            this.btnDn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDn2.Location = new System.Drawing.Point(12, 176);
+            this.btnDn2.Name = "btnDn2";
+            this.btnDn2.Size = new System.Drawing.Size(44, 32);
+            this.btnDn2.TabIndex = 6;
+            this.btnDn2.Text = "<";
+            this.btnDn2.UseVisualStyleBackColor = true;
+            this.btnDn2.Click += new System.EventHandler(this.btnDn2_Click);
+            // 
+            // tbx2
+            // 
+            this.tbx2.Location = new System.Drawing.Point(64, 176);
+            this.tbx2.Name = "tbx2";
+            this.tbx2.Size = new System.Drawing.Size(100, 26);
+            this.tbx2.TabIndex = 7;
+            // 
+            // tbx3
+            // 
+            this.tbx3.Location = new System.Drawing.Point(408, 351);
+            this.tbx3.Name = "tbx3";
+            this.tbx3.Size = new System.Drawing.Size(100, 26);
+            this.tbx3.TabIndex = 10;
+            // 
+            // btnDn3
+            // 
+            this.btnDn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDn3.Location = new System.Drawing.Point(356, 348);
+            this.btnDn3.Name = "btnDn3";
+            this.btnDn3.Size = new System.Drawing.Size(44, 32);
+            this.btnDn3.TabIndex = 9;
+            this.btnDn3.Text = "<";
+            this.btnDn3.UseVisualStyleBackColor = true;
+            this.btnDn3.Click += new System.EventHandler(this.btnDn3_Click);
+            // 
+            // btnUp3
+            // 
+            this.btnUp3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUp3.Location = new System.Drawing.Point(514, 348);
+            this.btnUp3.Name = "btnUp3";
+            this.btnUp3.Size = new System.Drawing.Size(44, 32);
+            this.btnUp3.TabIndex = 8;
+            this.btnUp3.Text = ">";
+            this.btnUp3.UseVisualStyleBackColor = true;
+            this.btnUp3.Click += new System.EventHandler(this.btnUp3_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 666);
+            this.ClientSize = new System.Drawing.Size(1011, 754);
+            this.Controls.Add(this.tbx3);
+            this.Controls.Add(this.btnDn3);
+            this.Controls.Add(this.btnUp3);
+            this.Controls.Add(this.tbx2);
+            this.Controls.Add(this.btnDn2);
+            this.Controls.Add(this.btnUp2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnSpeed);
             this.Controls.Add(this.model_chart);
             this.Controls.Add(this.bt_stop);
             this.Controls.Add(this.bt_start);
             this.Name = "MainForm";
             this.Text = "Model";
             ((System.ComponentModel.ISupportInitialize)(this.model_chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,6 +206,14 @@
         private System.Windows.Forms.Button bt_start;
         private System.Windows.Forms.Button bt_stop;
         private System.Windows.Forms.DataVisualization.Charting.Chart model_chart;
+        private System.Windows.Forms.Button btnSpeed;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnUp2;
+        private System.Windows.Forms.Button btnDn2;
+        private System.Windows.Forms.TextBox tbx2;
+        private System.Windows.Forms.TextBox tbx3;
+        private System.Windows.Forms.Button btnDn3;
+        private System.Windows.Forms.Button btnUp3;
     }
 }
 

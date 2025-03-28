@@ -53,6 +53,8 @@
     <Compile Include="Blocks\DelayBlock.cs" />
     <Compile Include="Blocks\GainBlock.cs" />
     <Compile Include="Blocks\IntBlock.cs" />
+    <Compile Include="Blocks\LimitBlock.cs" />
+    <Compile Include="Blocks\NoiseBlockcs.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,6 +89,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Знімок екрана 2025-03-28 140547.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
