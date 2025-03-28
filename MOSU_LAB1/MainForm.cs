@@ -14,7 +14,7 @@ namespace MOSU_LAB1
     public partial class MainForm : Form
     {
         private double dt = 1;
-        private ComplexBlock boiler;
+        private ComplexBlock tank;
         private double time = 0;
         private double y = 0;
 
@@ -27,12 +27,12 @@ namespace MOSU_LAB1
         public MainForm()
         {
             InitializeComponent();
-            boiler = new ComplexBlock();
-            boiler.Add(new DelayBlock(dt,2)); //запізнення
-            boiler.Add(new GainBlock(5));// підсилення 
-            boiler.Add(new APBlock(dt, 10));
-            boiler.Add(new APBlock(dt, 10));
-            boiler.Add(new NoiseBlock(5));
+            tank = new ComplexBlock();
+            tank.Add(new DelayBlock(dt,1)); //запізнення
+            tank.Add(new GainBlock(1));// підсилення 
+            tank.Add(new IntBlock(dt)); //інтегрування
+
+            tank.Add(new NoiseBlock(5));
         }
 
        
@@ -53,7 +53,9 @@ namespace MOSU_LAB1
         {
            
             model_chart.Series[0].Points.AddXY(time, y);
-            y = boiler.Calc(x2);
+            model_chart.Series[1].Points.AddXY(time, x2);
+            model_chart.Series[2].Points.AddXY(time, x3);
+            y = tank.Calc(x2+x3);
             time += dt;
         }
 
@@ -105,5 +107,7 @@ namespace MOSU_LAB1
             x3 = xlimit.Calc(++x3);
             tbx3.Text = x3.ToString("F2");
         }
+
+      
     }
 }

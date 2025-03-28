@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.modelTimer = new System.Windows.Forms.Timer(this.components);
             this.bt_start = new System.Windows.Forms.Button();
             this.bt_stop = new System.Windows.Forms.Button();
@@ -44,6 +46,8 @@
             this.tbx3 = new System.Windows.Forms.TextBox();
             this.btnDn3 = new System.Windows.Forms.Button();
             this.btnUp3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.model_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,17 +84,30 @@
             this.model_chart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea3.Name = "ChartArea1";
-            this.model_chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.model_chart.Legends.Add(legend3);
+            chartArea2.Name = "ChartArea1";
+            this.model_chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.model_chart.Legends.Add(legend2);
             this.model_chart.Location = new System.Drawing.Point(12, 413);
             this.model_chart.Name = "model_chart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Temp";
-            this.model_chart.Series.Add(series3);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series4.Legend = "Legend1";
+            series4.LegendText = "Рівень";
+            series4.Name = "Level";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.LegendText = "x2";
+            series5.Name = "x2";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series6.Legend = "Legend1";
+            series6.LegendText = "x3";
+            series6.Name = "x3";
+            this.model_chart.Series.Add(series4);
+            this.model_chart.Series.Add(series5);
+            this.model_chart.Series.Add(series6);
             this.model_chart.Size = new System.Drawing.Size(978, 277);
             this.model_chart.TabIndex = 2;
             this.model_chart.Text = "chart1";
@@ -124,7 +141,7 @@
             this.btnUp2.Name = "btnUp2";
             this.btnUp2.Size = new System.Drawing.Size(44, 32);
             this.btnUp2.TabIndex = 5;
-            this.btnUp2.Text = ">";
+            this.btnUp2.Text = "+";
             this.btnUp2.UseVisualStyleBackColor = true;
             this.btnUp2.Click += new System.EventHandler(this.btnUp2_Click);
             // 
@@ -135,7 +152,7 @@
             this.btnDn2.Name = "btnDn2";
             this.btnDn2.Size = new System.Drawing.Size(44, 32);
             this.btnDn2.TabIndex = 6;
-            this.btnDn2.Text = "<";
+            this.btnDn2.Text = "-";
             this.btnDn2.UseVisualStyleBackColor = true;
             this.btnDn2.Click += new System.EventHandler(this.btnDn2_Click);
             // 
@@ -148,7 +165,7 @@
             // 
             // tbx3
             // 
-            this.tbx3.Location = new System.Drawing.Point(408, 351);
+            this.tbx3.Location = new System.Drawing.Point(383, 372);
             this.tbx3.Name = "tbx3";
             this.tbx3.Size = new System.Drawing.Size(100, 26);
             this.tbx3.TabIndex = 10;
@@ -156,30 +173,50 @@
             // btnDn3
             // 
             this.btnDn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDn3.Location = new System.Drawing.Point(356, 348);
+            this.btnDn3.Location = new System.Drawing.Point(331, 369);
             this.btnDn3.Name = "btnDn3";
             this.btnDn3.Size = new System.Drawing.Size(44, 32);
             this.btnDn3.TabIndex = 9;
-            this.btnDn3.Text = "<";
+            this.btnDn3.Text = "-";
             this.btnDn3.UseVisualStyleBackColor = true;
             this.btnDn3.Click += new System.EventHandler(this.btnDn3_Click);
             // 
             // btnUp3
             // 
             this.btnUp3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnUp3.Location = new System.Drawing.Point(514, 348);
+            this.btnUp3.Location = new System.Drawing.Point(489, 369);
             this.btnUp3.Name = "btnUp3";
             this.btnUp3.Size = new System.Drawing.Size(44, 32);
             this.btnUp3.TabIndex = 8;
-            this.btnUp3.Text = ">";
+            this.btnUp3.Text = "+";
             this.btnUp3.UseVisualStyleBackColor = true;
             this.btnUp3.Click += new System.EventHandler(this.btnUp3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 20);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "x2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(419, 349);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "x3";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 754);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tbx3);
             this.Controls.Add(this.btnDn3);
             this.Controls.Add(this.btnUp3);
@@ -192,7 +229,7 @@
             this.Controls.Add(this.bt_stop);
             this.Controls.Add(this.bt_start);
             this.Name = "MainForm";
-            this.Text = "Model";
+            this.Text = "Trunk";
             ((System.ComponentModel.ISupportInitialize)(this.model_chart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -214,6 +251,8 @@
         private System.Windows.Forms.TextBox tbx3;
         private System.Windows.Forms.Button btnDn3;
         private System.Windows.Forms.Button btnUp3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
