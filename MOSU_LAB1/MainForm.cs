@@ -22,7 +22,7 @@ namespace MOSU_LAB1
         public MainForm()
         {
             InitializeComponent();
-            tank = new Tank(dt);
+            tank = new Tank(dt, 10, 1, 1, 1, -2);
            
         }
 
