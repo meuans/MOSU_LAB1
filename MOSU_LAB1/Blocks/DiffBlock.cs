@@ -6,32 +6,23 @@ using System.Threading.Tasks;
 
 namespace MOSU_LAB1.Blocks
 {
-    public class IntBlock : BaseBlock
+     
+
+    public class DiffBlock : BaseBlock
     {
-
-        private double prevX = 0;
-
+        private double prevX;
         private double dt;
 
-        private double sum = 0;
-
-        public IntBlock(double dt)
+        public DiffBlock(double dt)
         {
-
             this.dt = dt;
-
         }
 
         public override double Calc(double x)
         {
-
-            sum += (prevX + x) * dt / 2;
-
+            var y = (x - prevX) / dt;
             prevX = x;
-
-            return sum;
-
+            return y;
         }
-
     }
 }

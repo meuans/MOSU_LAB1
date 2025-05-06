@@ -13,7 +13,7 @@ namespace MOSU_LAB1.Blocks
 
         private double T;
 
-        private double prev;
+        private double prevX;
 
         public APBlock(double dt, double T)
         {
@@ -27,9 +27,9 @@ namespace MOSU_LAB1.Blocks
         public override double Calc(double x)
         {
 
-            var y = (dt * x + T * prev) / (T + dt);
+            var y = (dt * x + T * prevX) / (T + dt);
 
-            prev = y;
+            prevX = y;
 
             return y;
 
