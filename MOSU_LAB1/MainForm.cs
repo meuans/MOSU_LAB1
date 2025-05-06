@@ -15,7 +15,6 @@ namespace MOSU_LAB1
     {
         private double dt = 1;
         private Tank tank;
-        private double time = 0;
     
         
 
