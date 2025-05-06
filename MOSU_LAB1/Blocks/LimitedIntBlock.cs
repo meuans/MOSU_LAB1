@@ -9,7 +9,7 @@ namespace MOSU_LAB1.Blocks
     public class LimitedIntBlock : BaseBlock
     {
 
-        private double prev = 0;
+        private double prevX = 0;
 
         private double dt;
 
@@ -25,22 +25,24 @@ namespace MOSU_LAB1.Blocks
 
         }
 
-        public LimitedIntBlock(double dt, double min, double max)
+        public LimitedIntBlock(double dt, double downLimit, double upLimit)
         {
-            Min = min;
-            Max = max;
             this.dt = dt;
+            Max = upLimit;
+            Min = downLimit;
+           
+          
 
         }
 
         public override double Calc(double x)
         {
 
-            sum += (prev + x) * dt / 2;
+            sum += (prevX + x) * dt / 2;
             sum = (sum > Max) ? Max : sum;
             sum = (sum < Min) ? Min : sum;
 
-            prev = x;
+            prevX = x;
 
             return sum;
 

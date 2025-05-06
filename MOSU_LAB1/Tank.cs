@@ -13,19 +13,18 @@ namespace MOSU_LAB1
         private ComplexBlock tank;
         private LimitBlock xlimit = new LimitBlock(0, 100);
         
-        private double y = 0;
-
-
-        private double x2 = 0; //input2
-        private double x3 = 0; //input3
+   
 
         private GainBlock gain1;
         private GainBlock gain2;
         private GainBlock gain3;
         private GainBlock gain4;
 
+        private double y = 0;
+        private double x2 = 0; //input2
+        private double x3 = 0; //input3
         private double Gin = 0;
-        private double Gout = 4;
+        private double Gout = 2;
 
         public double Y { get { return y; } }
         public double X2 { get { return x2; } set { x2 = xlimit.Calc(value); } }
@@ -46,7 +45,7 @@ namespace MOSU_LAB1
             }
         }
 
-        public double K1 { get; set; }
+        public double K1 { get; set; } // коефіцієнти підсилення для різних потоків
         public double K2 { get; set; }
         public double K3 { get; set; }
         public double K4 { get; set; }
@@ -55,10 +54,10 @@ namespace MOSU_LAB1
         {
             this.dt = dt;
             tank = new ComplexBlock();
-            tank.Add(new DelayBlock(dt, 1)); //запізнення
+            // tank.Add(new DelayBlock(dt, 1)); //запізнення
             tank.Add(new GainBlock(1 / T));// підсилення 
-            tank.Add(new LimitedIntBlock(dt, 0, 100)); //інтегрування
-            tank.Add(new NoiseBlock(5));
+            tank.Add(new LimitedIntBlock(dt, 0, 100)); //інтегрування обмеження
+          //  tank.Add(new NoiseBlock(5));
 
             gain1 = new GainBlock(K1);
             gain2 = new GainBlock(K2);
