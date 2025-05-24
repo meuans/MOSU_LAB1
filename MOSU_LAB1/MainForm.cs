@@ -13,7 +13,7 @@ namespace MOSU_LAB1
 {
     public partial class MainForm : Form
     {
-        private double dt = 1;
+        private double dt = 0.1;
       
         private ControlSystem controlSystem;
 
@@ -26,6 +26,7 @@ namespace MOSU_LAB1
             controlSystem.Kp= 0.7;
             controlSystem.Ti = 100;
             controlSystem.Kd = 0;
+
 
         }
 
@@ -40,10 +41,12 @@ namespace MOSU_LAB1
             model_chart.Series[2].Points.Clear();
             model_chart.Series[3].Points.Clear();
 
+
             tbSetPoint.Text = controlSystem.Setpoint.ToString("F2");
             tbKp.Text = controlSystem.Kp.ToString("F2");
             tbTi.Text = controlSystem.Ti.ToString("F2");
             tbKd.Text = controlSystem.Kd.ToString("F2");
+           
 
         }
 
@@ -59,6 +62,8 @@ namespace MOSU_LAB1
             model_chart.Series[1].Points.AddXY(controlSystem.Time, controlSystem.Input2);
             model_chart.Series[2].Points.AddXY(controlSystem.Time, controlSystem.Input3);
             model_chart.Series[3].Points.AddXY(controlSystem.Time, controlSystem.E);
+           
+
             lbY.Text = "Y: "+controlSystem.Output.ToString("F2");
             tbx2.Text = controlSystem.Input2.ToString("F2");
             tbx3.Text = controlSystem.Input3.ToString("F2");
@@ -160,6 +165,43 @@ namespace MOSU_LAB1
             tbKp.Text = controlSystem.Kp.ToString("F2");
             tbTi.Text = controlSystem.Ti.ToString("F2");
             tbKd.Text = controlSystem.Kd.ToString("F2");
+        }
+
+        public void ShowProcess(double[] vars, int series)
+        {
+            var maxTime = Criteria.maxTime;
+            ControlSystem sys = new ControlSystem(dt);
+            sys.ManualMode = false;
+           
+
+            sys.pid.K = vars[0];
+            sys.pid.Ti = vars[1];
+            sys.pid.Kd = vars[2];
+            sys.Setpoint = 5;
+          
+            var stepCnt = (int)(maxTime / dt);
+            model_chart.Series[series].Points.Clear();
+            for (int i = 0; i < stepCnt; i++)
+            {
+
+                model_chart.Series[series].Points.AddXY(sys.Time, sys.Output);
+                sys.Calc();
+            }
+        }
+     
+
+        private void btnOptimize_Click_1(object sender, EventArgs e)
+        {
+            double[] p = { 0.5, 1, 0 }; // початкові параметри
+            var I1 = Criteria.I2Criteria(p);
+            ShowProcess(p, 4);
+            var steps = Optimizer.HookeJeeves(Criteria.I2Criteria, ref p);
+            ShowProcess(p, 5);
+            var I2 = Criteria.I2Criteria(p);
+            Optimizer.PrintPoint(p);
+            MessageBox.Show($"Kp={p[0]:0.00}, Ti={p[1]:0.00}, Kd={p[2]:0.00}\nI1={I1:0.000} → I2={I2:0.000}\nSteps={steps}");
+
+
         }
     }
 }

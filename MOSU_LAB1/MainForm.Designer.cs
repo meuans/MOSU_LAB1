@@ -35,6 +35,8 @@
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.modelTimer = new System.Windows.Forms.Timer(this.components);
             this.bt_start = new System.Windows.Forms.Button();
             this.bt_stop = new System.Windows.Forms.Button();
@@ -59,6 +61,7 @@
             this.tbKp = new System.Windows.Forms.TextBox();
             this.lbY = new System.Windows.Forms.Label();
             this.btnAuto = new System.Windows.Forms.Button();
+            this.btnOptimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.model_chart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,10 +123,22 @@
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Legend = "Legend1";
             series4.Name = "E";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Legend = "Legend1";
+            series5.Name = "Before";
+            series5.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Legend = "Legend1";
+            series6.Name = "After";
+            series6.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.model_chart.Series.Add(series1);
             this.model_chart.Series.Add(series2);
             this.model_chart.Series.Add(series3);
             this.model_chart.Series.Add(series4);
+            this.model_chart.Series.Add(series5);
+            this.model_chart.Series.Add(series6);
             this.model_chart.Size = new System.Drawing.Size(978, 459);
             this.model_chart.TabIndex = 2;
             this.model_chart.Text = "chart1";
@@ -309,11 +324,22 @@
             this.btnAuto.UseVisualStyleBackColor = true;
             this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
+            // btnOptimize
+            // 
+            this.btnOptimize.Location = new System.Drawing.Point(230, 300);
+            this.btnOptimize.Name = "btnOptimize";
+            this.btnOptimize.Size = new System.Drawing.Size(90, 32);
+            this.btnOptimize.TabIndex = 23;
+            this.btnOptimize.Text = "Optimize";
+            this.btnOptimize.UseVisualStyleBackColor = true;
+            this.btnOptimize.Click += new System.EventHandler(this.btnOptimize_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 1062);
+            this.Controls.Add(this.btnOptimize);
             this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.lbY);
             this.Controls.Add(this.tbKp);
@@ -372,6 +398,7 @@
         private System.Windows.Forms.TextBox tbKp;
         private System.Windows.Forms.Label lbY;
         private System.Windows.Forms.Button btnAuto;
+        private System.Windows.Forms.Button btnOptimize;
     }
 }
 

@@ -11,15 +11,15 @@ namespace MOSU_LAB1.Blocks
     {
         private double dt; // період дискретизації 
 
-        private Tank tank;
-        private PIDBlock pid;
+        public Tank tank;
+        public PIDBlock pid;
 
         private LimitBlock xLimit = new LimitBlock(0, 100);
         private LimitBlock levelLimit = new LimitBlock(0, 10);
 
         public ControlSystem(double dt) { 
             this.dt = dt;
-            tank = new Tank (dt, 10, 1, 1, 1, -10); //dt, t, K1, K2, K3, K4
+            tank = new Tank (dt, 5, 1, 1, 1, -10); //dt, t, K1, K2, K3, K4
             pid = new PIDBlock(dt);
 
 
@@ -46,7 +46,7 @@ namespace MOSU_LAB1.Blocks
         public bool ManualMode { get { return pid.ManualMode; } set { pid.ManualMode = value; } }
         public double Calc()
         {
-           var z = tank.Calc();
+           var z = tank.Calc();// поточний рівень у баці
            E = Setpoint - z;
            var u = pid.Calc(E);
             if (!ManualMode) 
